@@ -1,0 +1,209 @@
+@import url("colors.css");
+
+body {
+    margin: 0;         
+    padding: 0;        
+    display: block; 
+    min-height: 100vh; 
+    background: var(--BACKGROUND);
+    color: var(--LETTERS);
+    overflow-x: hidden; 
+}
+
+/* --- NAVBAR --- */
+.navbar {
+    width: 100%; 
+    height: 80px;      
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 0 40px; 
+    background: var(--navibar); 
+    border-bottom: 1px solid var(--MAIN); 
+    margin-bottom: 50px;
+}
+
+.nav-left, .nav-center, .nav-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-center {
+    justify-content: center;
+}
+
+.nav-content {
+    justify-content: flex-end;
+}
+
+/* --- LINKI I PRZYCISKI --- */
+
+.back-link-nav {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    white-space: nowrap; 
+}
+
+.back-link-nav:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.logout-link {
+    color: var(--LETTERS);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+    color: var(--MAIN);
+}
+
+.epicbtn {
+    position: relative;
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid var(--MAIN);
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--LETTERS);
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.epicbtn::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(var(--BACKGROUND), var(--MAIN), var(--BACKGROUND), var(--MAIN));
+    z-index: -1;
+    transition: .5s;
+}
+
+.epicbtn:hover::before {
+    top: 0;
+}
+
+/* --- POWIADOMIENIA --- */
+
+.text-error {
+    display: block;
+    color: var(--literyerror); 
+    background: var(--tloerror);
+    border-left: 3px solid var(--literyerror);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.text-success {
+    display: block;
+    color: var(--literysucces); 
+    background: var(--tlosuccess);
+    border-right: 3px solid var(--literysucces);
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+/* --- KONTENERY --- */
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center; 
+    text-align: center;
+    margin: 0 auto;       
+    width: 100%;
+    max-width: 800px;     
+    padding: 20px;
+}
+
+.menu-wrapper {
+    display: flex;
+    gap: 20px; 
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+
+.tiles-wrapper {
+    display: flex;          
+    flex-wrap: wrap;  
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.main-container h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+.menu-tile {
+    width: 200px;            
+    height: 200px;           
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--BACKGROUND); 
+    border: 3px solid var(--LETTERS);
+    border-radius: 15px;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.menu-tile:hover {
+    transform: scale(1.05);
+    border: 3px solid var(--MAIN);
+}
+.menu-tile:hover .tile-button {
+    color: var(--MAIN);
+}
+.tile-button {
+    background: transparent;
+    border: none;
+    color: var(--LETTERS);
+    font-size: 2.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-decoration: none; 
+    display: flex;
+    align-items: center;   
+    justify-content: center; 
+    text-align: center; 
+}

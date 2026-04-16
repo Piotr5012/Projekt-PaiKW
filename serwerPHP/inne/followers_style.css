@@ -1,0 +1,113 @@
+/* Sekcja wyników wyszukiwania w sidebarze */
+.user-search-results {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    border: 1px solid var(--MAIN);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.user-search-results h4 {
+    color: var(--MAIN);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* wiersz użytkownika */
+.user-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.user-row:last-child {
+    border-bottom: none;
+}
+
+.user-row:hover {
+    transform: translateX(5px);
+}
+
+/* Info o użytkowniku */
+.user-info-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--LETTERS);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.user-info-mini:hover {
+    color: var(--MAIN);
+}
+
+.user-avatar-small {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 2px solid var(--MAIN);
+    object-fit: cover;
+}
+
+/* Nagłówek sekcji postów */
+.feed-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--MAIN);
+}
+
+.feed-title {
+    color: #fff;
+    font-size: 2.4rem;
+    margin: 0;
+}
+
+/* Informacja o braku postów */
+.no-posts-container {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.no-posts-container p {
+    color: #888;
+    font-size: 1.1rem;
+}
+
+/* Przycisk szukaj w sidebarze (nadpisanie dla spójności) */
+.sidebar-search-btn {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 0.8rem;
+}
+
+/* Niwelowanie autouzupełniania Google  */
+
+.filter-input:-webkit-autofill,
+.filter-input:-webkit-autofill:hover, 
+.filter-input:-webkit-autofill:focus, 
+.filter-input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #1a1a1a inset !important; 
+    
+    -webkit-text-fill-color: var(--LETTERS) !important;
+    
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.filter-input:-webkit-autofill {
+    border: 1px solid var(--MAIN) !important;
+}

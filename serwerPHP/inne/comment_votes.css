@@ -1,0 +1,163 @@
+@import url("colors.css");
+
+.comment-voting {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.vote-btn.comment-vote {
+    gap: 6px;
+    transition: transform 0.2s ease;
+}
+
+.vote-btn.comment-vote .icon-vote {
+    width: 22px; 
+    height: 22px;
+    transition: background-color 0.3s, filter 0.3s; 
+}
+
+.vote-btn.comment-vote .count {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: 0 !important;
+    transition: text-shadow 0.3s, color 0.3s;
+}
+
+.vote-btn.comment-vote .icon-dislike {
+    margin-top: 0 !important;
+}
+
+/* STAN AKTYWNY (IKONA + CYFRA ŚWIECĄ)  */
+
+
+.vote-btn.comment-vote.like.active .icon-like {
+    background-color: var(--like); 
+    filter: drop-shadow(0 0 5px var(--like)) drop-shadow(0 0 2px var(--like));
+}
+
+.vote-btn.comment-vote.like.active .count {
+    color: var(--like);
+    text-shadow: 0 0 8px var(--like);
+}
+
+
+.vote-btn.comment-vote.dislike.active .icon-dislike {
+    background-color: var(--dislike); 
+    filter: drop-shadow(0 0 5px var(--dislike)) drop-shadow(0 0 2px var(--dislike));
+}
+
+.vote-btn.comment-vote.dislike.active .count {
+    color: var(--dislike);
+    text-shadow: 0 0 8px var(--dislike);
+}
+
+
+.vote-btn.comment-vote:not(.active):hover .icon-vote {
+    filter: brightness(1.2);
+}
+
+/* Kontener przycisku */
+.delete-comment-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;  
+    height: 24px;
+    background-color: var(--tlox); 
+    border-radius: 50%;      
+    text-decoration: none;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+/* Ikona X - teraz będzie czarna i wyśrodkowana w szarym kółku */
+.icon-delete {
+    display: inline-block;
+    width: 12px;  
+    height: 12px;
+    background-color: var(--kolorx); 
+    -webkit-mask-image: url("x-icon.svg");
+    mask-image: url("x-icon.svg");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.delete-comment-btn:hover {
+    opacity: 1;
+    background-color: var(--aktywnetlox); 
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+
+.delete-comment-btn:hover .icon-delete {
+    background-color: var(--aktywnykolorx); 
+}
+
+/* --- Wspólne style linków profilu --- */
+.author-profile-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+}
+
+.author-profile-link:hover .comment-user,
+.author-profile-link:hover strong {
+    color: var(--MAIN);
+    text-decoration: underline;
+}
+
+/* --- Awatar Autora Posta --- */
+.author-mini-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--MAIN);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.author-profile-link:hover .author-mini-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--MAIN);
+}
+
+/* --- Awatar w Komentarzach --- */
+.comment-author-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.comment-mini-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--MAIN);
+    transition: transform 0.2s ease;
+}
+
+.author-profile-link:hover .comment-mini-avatar {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px var(--MAIN);
+}
+
+.comment-user {
+    margin-right: 0 !important; 
+}
+
+/* Poprawka dla stopki, żeby autor był w jednej linii */
+.post-author-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}

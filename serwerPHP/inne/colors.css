@@ -1,0 +1,39 @@
+
+:root {
+    /* podstawowe kolory */
+    --BACKGROUND: #04090e;
+    --MAIN: #ff0000;
+    --LETTERS: #fff;
+    --underline-color: #ffffff;
+    --icon_Color: #fff;
+    --navibar:#000000;
+
+
+    /* Kolory błędów i sukcesów */
+    --literyerror: #ff0000;
+    --tloerror: rgba(255, 0, 0, 0.1); 
+    --literysucces: #09ff00;
+    --tlosuccess: rgba(7, 201, 36, 0.18); 
+
+    /* kolory do dodawania postu */
+    --backgroundArea: #34343494;
+    --obwodArea: #ffffff94;
+
+    /* dół ramki wyswetilanuia psota */
+    --borderBotomCol:#8c03038c;
+
+    /* kalor lików i dislików */
+    --like: #00ff33;
+    --dislike: #ff0000;
+
+    /* komenatrze */
+    --arekomnarza: rgba(255, 255, 255, 0.03);
+    --lightarekomnarza: rgba(255, 255, 255, 0.1);
+    --autorname: #ff0000;
+
+    /* kolor przycisku usuwania */
+    --tlox:#444444;
+    --kolorx:#000000;
+    --aktywnetlox: #ff4444;
+    --aktywnykolorx: #ffffff;
+}

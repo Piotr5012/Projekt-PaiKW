@@ -1,0 +1,391 @@
+@import url("colors.css");
+
+/* Kontener główny*/
+.post-container {
+    width: 1000px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid var(--MAIN);
+    box-shadow: 0 0 25px var(--MAIN);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Przycisk powrotu */
+.back-btn-container {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.back-btn {
+    display: inline-block;
+    background-color: var(--MAIN);
+    color: var(--LETTERS);
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.back-btn:hover {
+    filter: brightness(1.2); 
+}
+
+/* RAMKA POSTA */
+.post-card {
+    width: 100%;
+    background: var(--backgroundArea);
+    border-radius: 8px;
+    border-bottom: 1px solid var(--borderBotomCol);
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    color: var(--LETTERS);
+    overflow: hidden; 
+}
+
+/* Kontener obrazka */
+.post-image-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0; 
+}
+
+/* Sam obrazek */
+.post-image-content {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+}
+
+/* Pasek daty */
+.post-date-strip {
+    background: rgba(0, 0, 0, 0.15);
+    color: var(--MAIN);
+    font-size: 0.85rem;
+    font-style: italic;
+    padding: 10px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: right; 
+}
+
+/* Treść postu wewnątrz ramki */
+.post-body {
+    padding: 10px 40px 40px 40px;
+}
+
+.post-title-main {
+    text-align: center; 
+    font-size: 32px;
+    margin-top: 5px;    
+    margin-bottom: 25px; 
+    color: var(--LETTERS);
+}
+
+.post-text-full {
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: var(--LETTERS);
+}
+
+/* Stopka postu */
+.post-footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px dashed var(--MAIN);
+    padding-top: 20px;
+}
+
+/* Sekcja ocen */
+.rating-section {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex: 1;
+}
+
+.vote-btn {
+    text-decoration: none;
+    color: var(--LETTERS);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease;
+}
+
+.vote-btn:hover {
+    transform: scale(1.1);
+}
+
+.icon-vote {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    transition: opacity 0.2s ease;
+}
+
+/*  Sekcja LIKE*/
+.icon-like {
+    background-color: var(--like); /* Użycie Twojej zmiennej #00ff33 */
+    -webkit-mask-image: url("like-icon.svg");
+    mask-image: url("like-icon.svg");
+}
+
+.vote-btn:hover .icon-like {
+    opacity: 0.7; 
+}
+
+.like .count {
+    margin-top: 10px;
+    color: var(--like); 
+}
+
+/*  Sekcja DISLIKE */
+.icon-dislike {
+    margin-top: 20px;
+    background-color: var(--dislike); 
+    -webkit-mask-image: url("dislike-icon.svg");
+    mask-image: url("dislike-icon.svg");
+}
+
+.vote-btn:hover .icon-dislike {
+    opacity: 0.7;
+}
+
+.dislike .count {
+    margin-top: 10px;
+    color: var(--dislike); 
+}
+
+/* Licznik  */
+.vote-btn .count {
+    font-weight: bold;
+    font-size: 2.1rem;
+}
+
+/* Styl dla aktywnego lajka */
+.vote-btn.like.active .icon-like {
+    background-color: #00ff33; 
+    filter: drop-shadow(0 0 8px var(--like)); 
+    transform: scale(1.1);
+}
+
+.vote-btn.like.active .count {
+    text-shadow: 0 0 10px var(--like);
+}
+
+/* Styl dla aktywnego dislajka */
+.vote-btn.dislike.active .icon-dislike {
+    background-color: #ff0000; 
+    filter: drop-shadow(0 0 8px var(--dislike)); 
+    transform: scale(1.1);
+}
+
+.vote-btn.dislike.active .count {
+    text-shadow: 0 0 10px var(--dislike);
+}
+
+/* Dodatkowe zaznaczenie ramką */
+.vote-btn.active {
+    outline: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 5px;
+}
+
+/* Boczne sekcje stopki */
+.post-footer-left, .post-footer-right {
+    min-width: 150px;
+}
+
+.post-footer-right {
+    text-align: right;
+    color: #bbbbbb;
+}
+
+.category-tag {
+    color: var(--LETTERS);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* Sekcja komentarzy */
+.comments-section {
+    margin-top: 20px;
+    padding: 20px 40px; 
+    background: var(--backgroundArea);
+    border-radius: 8px;
+    color: var(--LETTERS);
+    width: 1000px; 
+    max-width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--borderBotomCol);
+}
+
+.comments-title {
+    color: var(--MAIN);
+    text-transform: uppercase;
+    border-bottom: 1px dashed var(--MAIN);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.comment-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: var(--arekomnarza);
+    border-left: 3px solid var(--MAIN);
+    border-radius: 4px;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.comment-user {
+    color: var(--autorname);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-right: 15px;
+}
+
+.comment-date {
+    color: #888;
+}
+
+.comment-content {
+    line-height: 1.5;
+}
+
+/* Pasek pod treścią komentarza */
+.comment-actions {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comment-voting {
+    display: flex;
+    gap: 15px;
+}
+
+.c-vote {
+    text-decoration: none;
+    color: #888;
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.c-vote.active {
+    color: var(--MAIN);
+    font-weight: bold;
+}
+
+.c-vote:hover {
+    filter: brightness(1.5);
+}
+
+/* Przycisk odpowiedzi */
+.reply-btn {
+    background: transparent;
+    border: none;
+    color: var(--MAIN);
+    font-size: 0.8rem;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Kontener formularza odpowiedzi */
+.reply-form-wrapper {
+    padding: 15px 0 10px 30px; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Formularz  */
+.comment-form-main textarea {
+    width: 100%;
+    min-height: 40px; 
+    height: 40px; 
+    background: var(--arekomnarza);
+    border: 1px solid var(--MAIN);
+    color: var(--LETTERS);
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    resize: none; 
+    overflow-y: hidden; 
+    box-sizing: border-box;
+    transition: background 0.2s;
+    display: block;
+}
+
+.comment-form-main textarea:focus {
+    background: var(--lightarekomnarza);
+    outline: none;
+}
+
+/* kontener przycisku  */
+.comment-submit-wrapper {
+    text-align: right;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Przycisk Dodaj komentarz */
+.comment-submit-btn {
+    display: inline-block;
+    background-color: var(--MAIN);
+    color: var(--LETTERS);
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, filter 0.3s ease;
+}
+
+.comment-submit-btn:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05); 
+}
+
+.comment-submit-btn:active {
+    transform: scale(0.98); 
+}

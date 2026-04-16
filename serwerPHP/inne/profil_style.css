@@ -1,0 +1,414 @@
+@import url("colors.css");
+
+/*GŁÓWNA RAMKA PROFILU */
+.profile-layout {
+    position: relative;
+    width: 1000px;
+    max-width: 95%;
+    margin: 100px auto 30px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 2px solid var(--MAIN);
+    box-shadow: 0 0 25px var(--MAIN);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/*  PRZYCISK USTAWIEŃ I DROPDOWN */
+.profile-options {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding-bottom: 20px; 
+    z-index: 100;
+}
+
+.settings-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: var(--tlox);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+    outline: none;
+}
+
+.settings-btn:hover {
+    opacity: 1;
+    background-color: var(--aktywnetlox);
+    transform: scale(1.1);
+    box-shadow: 0 0 10px var(--MAIN);
+}
+
+.icon-dots {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--kolorx);
+    -webkit-mask-image: url("../inne/dots-icon.svg");
+    mask-image: url("../inne/dots-icon.svg");
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.options-menu {
+    display: none;
+    position: absolute;
+    top: 30px; 
+    right: 0;
+    background: #111;
+    border: 1px solid var(--MAIN);
+    border-radius: 8px;
+    min-width: 190px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+
+.profile-options:hover .options-menu {
+    display: block;
+}
+
+.options-menu a, .options-menu button {
+    display: block;
+    width: 100%;
+    padding: 12px 18px;
+    color: #fff;
+    text-decoration: none;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 0.9rem;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+
+.options-menu a:hover, .options-menu button:hover {
+    background-color: #ff0000;
+    color: #000;
+}
+
+/* GÓRNA SEKCJA PROFILU */
+.profile-top-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.profile-avatar-container {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.profile-page-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--MAIN);
+    box-shadow: 0 0 15px var(--MAIN);
+}
+
+.profile-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-username {
+    margin: 5px;
+    font-size: 2.2rem;
+    color: var(--LETTERS);
+    position: relative;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.profile-username::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--MAIN);
+    box-shadow: 0 0 8px var(--MAIN);
+}
+
+.profile-bio-box {
+    background: rgba(83, 82, 82, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #bbb;
+    font-style: italic;
+}
+
+.followers-count {
+    font-size: 0.4em;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: normal;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Przycisk obserwowania  */
+.follow-btn {
+    background-color: var(--MAIN);    
+    color: var(--LETTERS);           
+    border: none;
+    border-radius: 4px;             
+    padding: 6px 15px; 
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s, box-shadow 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.35em; 
+}
+
+.follow-btn:hover {
+    filter: brightness(0.9);
+    box-shadow: 0 0 15px var(--MAIN); 
+}
+
+.follow-btn:active {
+    transform: scale(0.98);
+}
+
+.follow-btn.following {
+    background-color: #333 !important;
+    color: #bbb;
+    box-shadow: none !important;
+}
+
+.follow-btn.following:hover {
+    box-shadow: 0 0 10px #333;
+}
+
+/* STYL KART POSTÓW  */
+.posts-outside-container {
+    width: 1000px;
+    max-width: 95%;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    color: var(--MAIN);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.user-activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.post-card {
+    position: relative; 
+    width: 100%;
+    background: var(--backgroundArea);
+    border-radius: 8px;
+    border-bottom: 1px solid var(--borderBotomCol);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.post-top-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    z-index: 5; 
+}
+
+.post-image img {
+    width: 100%;
+    height: 80px; 
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(0.8); 
+}
+
+.post-content {
+    padding: 0 15px;
+    margin-top: 10px;
+}
+
+.post-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post-title {
+    color: var(--MAIN);
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: right;
+    margin: 0;
+}
+
+.post-link {
+    text-decoration: none;
+    color: var(--MAIN);
+    transition: 0.3s;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 10px var(--MAIN);
+}
+
+.post-text {
+    color: #eee;
+    line-height: 1.6;
+    text-align: justify;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}
+
+/* Stopka posta ze statystykami */
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px dashed var(--MAIN);
+    margin-top: 10px;
+}
+
+.post-stats-mini {
+    display: flex;
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #888888;
+}
+
+.icon-mini {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #888888;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.icon-mini.icon-like { -webkit-mask-image: url("../inne/like-icon.svg"); mask-image: url("../inne/like-icon.svg"); }
+.icon-mini.icon-dislike { -webkit-mask-image: url("../inne/dislike-icon.svg"); mask-image: url("../inne/dislike-icon.svg"); }
+.icon-mini.icon-comment { -webkit-mask-image: url("../inne/comment-icon.svg"); mask-image: url("../inne/comment-icon.svg"); }
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.category-tag {
+    background: var(--MAIN);
+    color: var(--LETTERS);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.author {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+}
+
+/* Przyciski akcji (edycja/usuwanie) */
+.post-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.post-action-btn {
+    width: 28px;
+    height: 28px;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(2px); 
+}
+
+.post-action-btn:hover {
+    transform: scale(1.1);
+    background-color: var(--MAIN);
+}
+
+.post-action-btn.edit:hover { background-color: var(--MAIN); }
+.post-action-btn.delete:hover {
+    background-color: var(--MAIN);
+}
+
+.icon-edit, .icon-delete {
+    width: 14px;
+    height: 14px;
+    background-color: var(--LETTERS); 
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.icon-edit { -webkit-mask-image: url("edit-icon.svg"); mask-image: url("edit-icon.svg"); }
+.icon-delete { -webkit-mask-image: url("x-icon.svg"); mask-image: url("x-icon.svg"); }
+
+.post-action-btn:hover .icon-edit, 
+.post-action-btn:hover .icon-delete {
+    background-color: #000;
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+@media (max-width: 768px) {
+    .profile-top-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    .profile-username::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .post-header-flex {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        gap: 10px;
+    }
+}
