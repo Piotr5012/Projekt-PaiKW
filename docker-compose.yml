@@ -16,7 +16,7 @@ services:
     container_name: paikw_db
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: paikw_projket
+      MYSQL_DATABASE: paikw_database
     ports:
       - "3306:3306"
     volumes:
