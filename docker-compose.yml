@@ -1,0 +1,34 @@
+services:
+  
+  php_serwer:
+    build: .
+    container_name: projekt_paikw
+    ports:
+      - "8000:80"
+    volumes:
+      - ./serwerPHP:/var/www/html
+    depends_on:
+      - db_mysql
+
+  
+  db_mysql:
+    image: mysql:8.0
+    container_name: paikw_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: paikw_projket
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_dane:/var/lib/mysql
+
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: paikw_admin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db_mysql
+    depends_on:
+      - db_mysql
