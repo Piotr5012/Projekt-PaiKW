@@ -1,16 +1,15 @@
-// --- FUNKCJA PODGLĄDU AVATARA ---
 function initAvatarPreview() {
     const avatarInput = document.getElementById('avatar_upload');
     const avatarPreview = document.getElementById('avatar-preview');
 
-    // Jeśli nie jesteśmy na stronie edycji profilu, przerywamy
+    
     if (!avatarInput || !avatarPreview) return;
 
     avatarInput.addEventListener('change', function() {
         const file = this.files[0];
 
         if (file) {
-            // Zabezpieczenie po stronie klienta
+            
             const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
             if (!allowedTypes.includes(file.type)) {
                 alert("Niedozwolony format pliku! Wybierz JPG, JPEG lub PNG.");
@@ -28,7 +27,6 @@ function initAvatarPreview() {
     });
 }
 
-// --- TWOJE ISTNIEJĄCE FUNKCJE ---
 
 function toggleProfileDetails() {
     const defaultView = document.getElementById('view-default');
@@ -52,18 +50,13 @@ function smartBack(fallbackUrl) {
     const referrer = document.referrer;
     const currentUrl = window.location.href.split('?')[0];
 
-    // Jeśli poprzednia strona to ten sam post (odświeżenie przez lajk/komentarz)
-    // lub jeśli referrer jest pusty
     if (referrer.includes(currentUrl) || referrer === "") {
-        // Wracamy do strony, z której pierwotnie przyszliśmy (Profil lub Przegląd)
         window.location.href = fallbackUrl;
     } else {
-        // Jeśli to pierwsze wejście na post z innej strony, cofnij normalnie
         window.history.back();
     }
 }
 
-// --- URUCHOMIENIE FUNKCJI PO ZAŁADOWANIU STRONY ---
 document.addEventListener('DOMContentLoaded', () => {
     initAvatarPreview();
     
