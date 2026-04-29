@@ -60,7 +60,6 @@ function smartBack(fallbackUrl) {
 document.addEventListener('DOMContentLoaded', () => {
     initAvatarPreview();
     
-    // Obsługa znikania komunikatów (jeśli masz ją w tym pliku)
     const successMessage = document.querySelector('.text-success');
     if (successMessage) {
         setTimeout(() => {
